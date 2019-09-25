@@ -1,0 +1,17 @@
+{
+    "name": "AppMonitorDemo",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+      "start": "node main.js"
+    },
+    "dependencies": {
+      "express": "4.15.x",
+      "ibm-cloud-monitoring": "^0.1.0"
+    },
+    "repository": {},
+    "engines": {
+      "node": "6.x"
+    }
+  }
+  
