@@ -44,17 +44,17 @@ Now that we have a VPC and a Virtual Server Instance, it is time to install the 
 
 1. Issue the following command to access the Virtual Server from your workstation: 
    
-   `ssh root@*floating ip*`  
-    - The *floating ip* is the IP address assigned to the VPC's VSI in the previous section.
+    - `ssh root@*floating ip*`  
+       The *floating ip* is the IP address assigned to the VPC's VSI in the previous section.
 
    If you need to specify the SSH Key file, use the following command:
 
-   `ssh -i *ssh key file* root@*floating ip*`
-    - The *ssh key file* is the full path and filename of the SSH Key file created in Section #2 above.
+    - `ssh -i *ssh key file* root@*floating ip*`
+       The *ssh key file* is the full path and filename of the SSH Key file created with your VPC.
 
 2. Update the local package repository. Issue the command 
 
-   `sudo apt-get update`
+    - `sudo apt-get update`
 3. Install the LTS version of [Node.js](https://nodejs.org/en/) (which includes NPM) by issuing the following commands:
     - `curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -`
     - `sudo apt-get install -y nodejs`
@@ -92,7 +92,7 @@ Now that we have a VPC and a Virtual Server Instance, it is time to install the 
 8. Save and exit the file
 9. Create the *main.js* file by issuing the command `vi main.js`
 10. Copy and paste the entire *main.js* source file into the vi editor. [Open the main.js file](appMonitor/appMonitor.js)
-11. Update the following constants in `main.js` file with your values (see (Sending data by using the Metrics API)[https://cloud.ibm.com/docs/services/cloud-monitoring/security?topic=cloud-monitoring-send_data_api] documentation):
+11. Update the following constants in `main.js` file with your values. See [Sending data by using the Metrics API](https://cloud.ibm.com/docs/services/cloud-monitoring/security?topic=cloud-monitoring-send_data_api) documentation:
     - `cloudAPIKey` - Your IBM Cloud API Key (see Prerequisites section).
     - `spaceGUID` - IBM Cloud Space GUID where the Monitor service resides.
     - `monitorEndPoint` - Metrics Monitor endpoint.
@@ -115,10 +115,7 @@ Now that we have the `AppMonitor` installed and running on the Virtual Server le
    If you need to specify the SSH Key file, use the following command:
 
    `ssh -i *ssh key file* root@*floating ip*`
-    - The *ssh key file* is the full path and filename of the SSH Key file created in Section #2 above.
-
-    - The *ssh key file* is the full path and filename of the SSH Key file created in step #3 above.
-    - The *floating ip* is the IP address created in Step #5.16 above.
+    - The *ssh key file* is the full path and filename of the SSH Key file created with your VPC.
 
 3. Issue the following command to send a custom metric: 
 
@@ -130,9 +127,9 @@ Now that we have the `AppMonitor` installed and running on the Virtual Server le
 
 ## Links
 - [IBM Cloud VPC](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started)
-- [IBM Cloud Moitoring - Getting Started](https://cloud.ibm.com/docs/services/cloud-monitoring?topic=cloud-monitoring-getting-started)
+- [IBM Cloud Monitoring - Getting Started](https://cloud.ibm.com/docs/services/cloud-monitoring?topic=cloud-monitoring-getting-started)
 - [IBM Cloud Monitoring Node Library](https://www.npmjs.com/package/ibm-cloud-monitoring)
 - [IBM Catalog Monitoring service](https://cloud.ibm.com/catalog/services/monitoring)
-- (Metric Rest API)[https://cloud.ibm.com/apidocs/monitoring-metrics-api#send-metrics-to-a-space]
+- [Metric Rest API](https://cloud.ibm.com/apidocs/monitoring-metrics-api#send-metrics-to-a-space)
 
 
